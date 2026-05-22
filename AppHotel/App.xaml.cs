@@ -1,9 +1,31 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AppHotel.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AppHotel
 {
     public partial class App : Application
     {
+        public List<Quarto> lista_quartos = new List<Quarto>
+        {
+        new Quarto()
+        {
+            Descricao = "Suíte Super Luxo",
+            ValorDiariaAdulto = 110.00,
+            ValorDiariaCrianca = 55.00
+        },
+        new Quarto()
+        {
+            Descricao = "Suíte Luxo",
+            ValorDiariaAdulto = 80.00,
+            ValorDiariaCrianca = 25.00
+        },
+        new Quarto()
+        {
+            Descricao = "Suíte Crise",
+            ValorDiariaAdulto = 25.00,
+            ValorDiariaCrianca = 12.50
+        }
+        };
         public App()
         {
             InitializeComponent();

@@ -16,7 +16,7 @@
             FontSize="50"
             TextColor="{StaticResource Primary}"/>
 
-        <Frame Padding="10">
+        <Frame Padding="10" BackgroundColor="{StaticResource PrimaryDark}">
             <VerticalStackLayout>
                 <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, 2*">
                     <Label Grid.Row="0" Grid.Column="0" Text="Adultos:"/>
@@ -29,21 +29,23 @@
                 </Grid>
 
                 <Label Text="Escolha sua Suíte:"/>
-                <Picker x:Name="pck_quarto" Title="Selecione sua Acomodação"/>
-                <Frame Padding="10" Margin="10">
+                <Picker x:Name="pck_quarto" 
+                        ItemDisplayBinding="{Binding Descricao}"
+                        Title="Selecione sua Acomodação"/>
+                <Frame Padding="10" Margin="10" BackgroundColor="{StaticResource Primary}">
                     <VerticalStackLayout>
                         <Label Text="Período da Estadia"/>
-                        <HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-in:"/>
                             <DatePicker x:Name="dtpck_checkin" Format="dd/MM/yyyy"/>
                         </HorizontalStackLayout>
-                        <HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-out:"/>
                             <DatePicker x:Name="dtpck_checkout" Format="dd/MM/yyyy"/>
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
                 </Frame>
-                <Button Text="Avançar"/>
+                <Button Text="Avançar" Clicked="Button_Clicked"/>
             </VerticalStackLayout>
         </Frame>
     </VerticalStackLayout>
